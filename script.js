@@ -97,6 +97,7 @@ const allTree = () => {
 
 }
 const categoriesCardLoad = (id) => {
+    manageSpinnerForCard(true)
     const url = `https://openapi.programming-hero.com/api/category/${id}`
     fetch(url)
         .then(res => res.json())
@@ -133,6 +134,7 @@ const categoriesCardDisplay = (categoryPlants) => {
         `
         cardContainer.appendChild(div)
     });
+    manageSpinnerForCard(false)
 }
 categoriesNameLoad()
 
