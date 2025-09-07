@@ -22,7 +22,7 @@ const plantDisplay = (plants) => {
                                     alt="Shoes" class="rounded-xl w-full h-44 object-cover " />
                             </figure>
                             <div class="card-body">
-                                <h2 class="card-title text-[#1F2937] font-semibold text-[14px]">${plant.name}</h2>
+                                <h2 onclick="plantDetailsLoad(${plant.id})" class="card-title text-[#1F2937] font-semibold text-[14px] cursor-pointer">${plant.name}</h2>
                                 <p class="text-[#1F2937] text-xs">${plant.description}</p>
                                 <div class="flex items-center">
                                     <div><p class="text-[#15803D] bg-[#DCFCE7] py-1 px-3 rounded-full">${plant.category}</p></div>
@@ -119,7 +119,7 @@ const categoriesCardDisplay = (categoryPlants) => {
                                     alt="Shoes" class="rounded-xl w-full h-44 object-cover " />
                             </figure>
                             <div class="card-body">
-                                <h2 class="card-title text-[#1F2937] font-semibold text-[14px]">${plant.name}</h2>
+                                <h2 onclick="plantDetailsLoad(${plant.id})" class="card-title text-[#1F2937] font-semibold text-[14px] cursor-pointer">${plant.name}</h2>
                                 <p class="text-[#1F2937] text-xs">${plant.description}</p>
                                 <div class="flex items-center">
                                     <div><p class="text-[#15803D] bg-[#DCFCE7] py-1 px-3 rounded-full">${plant.category}</p></div>
@@ -178,4 +178,45 @@ const removeItem = (id) => {
 
     }
 }
+const plantDetailsLoad = (id) => {
+    const url = `https://openapi.programming-hero.com/api/plant/${id}`;
+    fetch(url)
+        .then(res => res.json())
+        .then(data => plantDetailsDisplay(data.plants))
+}
+const plantDetailsDisplay = (plant) => {
+    const modalContainer = document.getElementById("modal-container")
+    modalContainer.innerHTML = "";
+    const modalDiv = document.createElement("div")
+
+    modalDiv.innerHTML = `
+    <div class="modal-box space-y-3">
+                        <h2 class="card-title text-[#1F2937] font-bold text-[14px] cursor-pointer">${plant.name}
+                        </h2>
+                            <img src="${plant.image}" alt="Shoes" class="rounded-xl w-full h-44 object-cover " />
+                            <p class=""><span class="font-semibold">Category:</span> ${plant.category}
+                            </p>
+                        <div class="flex items-center">
+                            <p class="font-medium text-[14px] text-[#1F2937] flex justify-end"><span
+                                    class="font-bold">Price:</span><i
+                                    class="fa-solid fa-bangladeshi-taka-sign"></i><span>${plant.price}</span></p>
+                        </div>
+                        <p class="text-[#1F2937] text-xs"><span class="font-bold">Description: </span>${plant.description}</p>
+
+                        <div class="modal-action">
+                            <form method="dialog">
+                                <!-- if there is a button in form, it will close the modal -->
+                                <button class="btn">Close</button>
+                            </form>
+                        </div>
+                    </div>
+`
+    modalContainer.appendChild(modalDiv)
+    document.getElementById("modal_box").showModal();
+}
+
+
+
+
+
 plantLoad()
