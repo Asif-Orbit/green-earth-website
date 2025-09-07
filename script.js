@@ -123,7 +123,7 @@ const plantCartLoad = (id) => {
         .then(data => carts(data.plants))
 }
 const carts = (item) => {
-
+    alert(`${item.name}`+" price ৳"+`${item.price}` +" has been added to your cart!")
     const cartContainer = document.getElementById("cart-container");
     const cartDiv = document.createElement("div")
     cartDiv.innerHTML = `
