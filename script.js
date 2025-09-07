@@ -1,4 +1,5 @@
 const plantLoad = () => {
+    manageSpinnerForCard(true)
     const url = "https://openapi.programming-hero.com/api/plants"
     fetch(url)
         .then(res => res.json())
@@ -35,6 +36,7 @@ const plantDisplay = (plants) => {
         `
         cardContainer.appendChild(div)
     });
+    manageSpinnerForCard(false)
 }
 const removeActive = () => {
     const categoryBtns = document.querySelectorAll(".category-btn")
@@ -45,8 +47,29 @@ const removeActive = () => {
     })
 
 }
+const manageSpinnerForCategory = (status) => {
+    if (status == true) {
+        document.getElementById("spinner1").classList.remove("hidden")
+        document.getElementById("category-container").classList.add("hidden")
+
+    } else {
+        document.getElementById("spinner1").classList.add("hidden")
+        document.getElementById("category-container").classList.remove("hidden")
+    }
+}
+const manageSpinnerForCard = (status) => {
+    if (status == true) {
+        document.getElementById("spinner2").classList.remove("hidden")
+        document.getElementById("card-container").classList.add("hidden")
+    } else {
+        document.getElementById("spinner2").classList.add("hidden")
+        document.getElementById("card-container").classList.remove("hidden")
+    }
+}
+
 
 const categoriesNameLoad = () => {
+    manageSpinnerForCategory(true)
     const url = "https://openapi.programming-hero.com/api/categories"
     fetch(url)
         .then(res => res.json())
@@ -64,7 +87,7 @@ const categoriesNameDisplay = (plantNames) => {
         `
         categoryContainer.appendChild(categoryDiv);
     })
-
+    manageSpinnerForCategory(false)
 
 }
 const allTree = () => {
@@ -123,7 +146,7 @@ const plantCartLoad = (id) => {
         .then(data => carts(data.plants))
 }
 const carts = (item) => {
-    alert(`${item.name}`+" price ৳"+`${item.price}` +" has been added to your cart!")
+    alert(`${item.name}` + " price ৳" + `${item.price}` + " has been added to your cart!")
     const cartContainer = document.getElementById("cart-container");
     const cartDiv = document.createElement("div")
     cartDiv.innerHTML = `
