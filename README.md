@@ -1,20 +1,21 @@
-## WELCOME TO ( সহজ সরল সিম্পল ) ASSIGNMENT-006
 
-### 📅 Deadline For 60 marks: 9th September, 2025 (11:59 pm ⏱️)
-
-### 📅 Deadline For 50 marks : 13th September , 2025 (6:00 pm⏱️)
-
-### 📅 Deadline For 30 marks: Any time after 13the September , 2025 (6:01 pm⏱️).
-
----
-# Green Earth
+#### 7) Create a README file to answer the following question-
 
 
-## Private Repository: https://classroom.github.com/a/nVZrg5R9 
+#### 1) What is the difference between var, let, and const?
+ Answer: Var is function scoped but let and const is block scoped. Var is hoisted and initialized with undefined. Let and const are hoisted but not initialized. We can reassignment var and let value but we can not reassignment const value. We can redeclaration var but we can not redeclaration let and const value.
 
-## Alternative Private Repository: https://classroom.github.com/a/KCGI14ST 
+#### 2) What is the difference between map(), forEach(), and filter()? 
+Answer: map() and filter() both return a new array but forEach() do not return anything. We use map() function To transform each item into something else. It's return a new array of the same length. And forEach() function To execute a function for each item. It's does not return anything or you can say it's return undefined. And filter() function To select a subset of items based on a condition.It's returns a new array that can be shorter than or the same length as the original.
 
-## Alternative Private Repository: https://classroom.github.com/a/JMuIYqgK 
+#### 3) What are arrow functions in ES6?
+Answer: The syntax for arrow functions is shorter and cleaner than older function. Arrow function syntax is const sum = (a,b) => a+b; If we use only one line then we do not need to return it. It will automatically return. Also we can use multi line. we need to just use {}. like const sum = (a,b) => {c=a+b; return c}; if you use third bracket you need to use return. under forEach() function we use arrow function it is more convenient.
+
+#### 4) How does destructuring assignment work in ES6?
+Answer: Destructuring assignment is a JavaScript expression that makes it possible to unpack values from arrays or properties from objects into distinct variables. It provides a cleaner and more convenient way to extract data.
+
+#### 5) Explain template literals in ES6. How are they different from string concatenation?
+Answer: Template literals are a feature in ES6 that allow us to create strings with embedded expressions and multi-line capabilities. They are enclosed by backticks (``) instead of single or double quotes. It is a powerful tools for show data dynamically. But in string concatenation we can not show data dynamically when we try to use it creates issues.
 
 
 ---
@@ -49,51 +50,8 @@ https://openapi.programming-hero.com/api/plant/${id}
 ```bash
 https://openapi.programming-hero.com/api/plant/1
 ```
----
 
 
-
-
-## ✅ Main Requirements 
-
-#### 1) Navbar
-
-- Website **logo/name** on the **left**  
-- **Menu items** in the **center** 
-- **Plant a Tree button** on the **right** 
-
-#### 2) Banner 
-- A **background image**  
-- A **title** and **subtitle**  
-- A **centered button**  
-
-#### 3) About Campaign
-- **Section heading**  
-- **Image on the left**, **text on the right**  
-
-#### 4) Our Impact Section 
-- Show **3 cards** with campaign **statistics**  
-
-#### 5) Plant a Tree Today Section & Footer
-- **Form**: Name, Email, Number of Trees  
-- **Footer** with copyright info 
-
-#### 6) Responsiveness 
-- Website must be **mobile responsive**  
-
----
-#### 7) Create a README file to answer the following question-
-
-
-#### 1) What is the difference between var, let, and const?
-
-#### 2) What is the difference between map(), forEach(), and filter()? 
-
-#### 3) What are arrow functions in ES6?
-
-#### 4) How does destructuring assignment work in ES6?
-
-#### 5) Explain template literals in ES6. How are they different from string concatenation?
 
 ## ⚙️ Functionalities 
 
@@ -157,13 +115,3 @@ Clicking a tree name on a card opens a modal with full tree details.
 ✅ At least 5 meaningful commits
 
 ❌ No dummy text or Lorem Ipsum — must use relevant content
-
-
-
-
-
-## 🔗 Submission
-- **Live Link :** YOUR_DEPLOYED_URL_HERE  
-- **GitHub Private Repository:** YOUR_REPO_URL_HERE  
-
----

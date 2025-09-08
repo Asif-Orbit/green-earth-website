@@ -40,8 +40,6 @@ const plantDisplay = (plants) => {
 }
 const removeActive = () => {
     const categoryBtns = document.querySelectorAll(".category-btn")
-    const allTrees = document.getElementById("all-trees")
-    allTrees.classList.remove("active")
     categoryBtns.forEach(btn => {
         btn.classList.remove("active")
     })
@@ -79,7 +77,7 @@ const categoriesNameLoad = () => {
 }
 const categoriesNameDisplay = (plantNames) => {
     const categoryContainer = document.getElementById("category-container");
-    categoryContainer.innerHTML = `<p id="all-trees" onclick="plantLoad(); allTree()" class="cursor-pointer font-medium text-black rounded-[4px] pl-3 py-1 active .category-btn">All Trees</p>`
+    categoryContainer.innerHTML = `<p id="all-trees" onclick="plantLoad(); allTree()" class="cursor-pointer font-medium text-black rounded-[4px] pl-3 py-1 active category-btn">All Trees</p>`
     plantNames.forEach(name => {
         const categoryDiv = document.createElement("div");
         categoryDiv.innerHTML = `
@@ -114,7 +112,7 @@ const categoriesCardDisplay = (categoryPlants) => {
     categoryPlants.forEach(plant => {
         const div = document.createElement("div");
         div.innerHTML = `
-            <div class="card bg-base-100 shadow-sm min-h-fit">
+            <div class="card bg-base-100 shadow-sm h-full">
                             <figure class="px-4 pt-4">
                                 <img src="${plant.image}"
                                     alt="Shoes" class="rounded-xl w-full h-44 object-cover " />
